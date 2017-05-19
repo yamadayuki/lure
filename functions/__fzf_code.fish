@@ -1,4 +1,4 @@
-function __fzf_go_src
+function __fzf_code
   set -l query (commandline)
 
   if test -n query
