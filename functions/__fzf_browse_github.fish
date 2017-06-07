@@ -1,5 +1,5 @@
 function __fzf_browse_github -d "Browse remote repository on github"
-  set =l query (commandline)
+  set -l query (commandline)
 
   if test -n query
     set fzf_flags -q "$query"
