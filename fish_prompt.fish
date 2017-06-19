@@ -14,7 +14,7 @@ function fish_prompt
   set -g __fish_git_prompt_show_color_hints true
 
   set -l pcolor $bpurple
-  if [$last_status -ne 0]
+  if [ $last_status -ne 0 ]
     set pcolor $bred
   end
 
