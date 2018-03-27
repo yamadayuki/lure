@@ -1,7 +1,7 @@
 # Setup for anyenv
 set -x PATH $PATH $HOME/.anyenv/bin
 
-if [ which anyenv ]
+if [ [ which anyenv ] ]
   # Setup *env managed by anyenv
   set -l envs (anyenv envs)
   for e in $envs
@@ -14,7 +14,7 @@ if [ which anyenv ]
   end
 end
 
-if [ which goenv ]
+if [ [ which goenv ] ]
   # Setup Go using goenv
   set -x GOPATH $HOME/dev
   set -x PATH $PATH $GOENV_ROOT/bin $GOPATH/bin
