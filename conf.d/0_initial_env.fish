@@ -14,6 +14,8 @@ if [ which anyenv ]
   end
 end
 
-# Setup Go using goenv
-set -x GOPATH $HOME/dev
-set -x PATH $PATH $GOENV_ROOT/bin $GOPATH/bin
+if [ which goenv ]
+  # Setup Go using goenv
+  set -x GOPATH $HOME/dev
+  set -x PATH $PATH $GOENV_ROOT/bin $GOPATH/bin
+end
