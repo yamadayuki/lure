@@ -1,3 +1,3 @@
 function wttr -d "Display weather"
-  curl wttr.in
+    curl wttr.in
 end

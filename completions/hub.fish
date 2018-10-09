@@ -1,22 +1,22 @@
 # Copy from https://github.com/github/hub/blob/master/etc/hub.fish_completion
 
 function __fish_hub_needs_command
-  set cmd (commandline -opc)
-  if [ (count $cmd) -eq 1 ]
-    return 0
-  else
-    return 1
-  end
+    set cmd (commandline -opc)
+    if [ (count $cmd) -eq 1 ]
+        return 0
+    else
+        return 1
+    end
 end
 
-function  __fish_hub_using_command
-  set cmd (commandline -opc)
-  if [ (count $cmd) -gt 1 ]
-    if [ $argv[1] = $cmd[2] ]
-      return 0
+function __fish_hub_using_command
+    set cmd (commandline -opc)
+    if [ (count $cmd) -gt 1 ]
+        if [ $argv[1] = $cmd[2] ]
+            return 0
+        end
     end
-  end
-  return 1
+    return 1
 end
 
 complete -f -c hub -n '__fish_hub_needs_command' -a alias -d "show shell instructions for wrapping git"
