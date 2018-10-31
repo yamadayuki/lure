@@ -4,7 +4,7 @@ function __pg_start
 
     echo "==> Starting server"
     docker start $NAME 2>/dev/null
-    or server_create $name $image
+    or __pg_server_create $name $image
 
     echo "==> Waiting for ready"
     while true
