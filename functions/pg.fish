@@ -7,7 +7,7 @@ echo $image
 function pg
     set -l cmd $argv[1]
 
-    switch ($cmd)
+    switch "$cmd"
         case start stop destroy psql createdb status logs
             echo "not implemented $cmd"
         case '*'
