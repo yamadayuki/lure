@@ -73,7 +73,7 @@ end
 function __pg_status
     set -l name $argv[1]
     if docker ps | grep $name >/dev/null
-        __pg_ping
+        __pg_ping $name
         and echo 'ready'
         or echo 'not ready'
     else
