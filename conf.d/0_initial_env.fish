@@ -13,9 +13,3 @@ if which anyenv >/dev/null ^&1
         set -x PATH $PATH $root/bin
     end
 end
-
-if which goenv >/dev/null ^&1
-    # Setup Go using goenv
-    set -x GOPATH $HOME/dev
-    set -x PATH $PATH $GOENV_ROOT/bin $GOPATH/bin
-end
