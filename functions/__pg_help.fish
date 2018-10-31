@@ -1,15 +1,10 @@
-#> postgres <command>
-#>
-#> COMMANDS:
-#>     postgres start
-#>     postgres stop
-#>     postgres destroy
-#>     postgres psql
-#>     postgres createdb $dbname
-#>     postgres status
-#>     postgres logs
-
 function __pg_help
-    cat (string join '' (pwd) (status -f | string replace '.' '')) | grep '^#>' | sed -e 's/#> //g' -e 's/#>//g'
-    exit 0
+    set -l commands start stop destroy psql "createdb [dbname]" status logs help
+
+    echo "pg <command>"
+    echo ""
+    echo "COMMANDS:"
+    for c in $commands
+        echo "  pg $c"
+    end
 end
