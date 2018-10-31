@@ -54,7 +54,7 @@ function __pg_start
     set -l image $argv[2]
 
     echo "==> Starting server"
-    docker start $NAME 2>/dev/null
+    docker start $name 2>/dev/null
     or __pg_server_create $name $image
 
     echo "==> Waiting for ready"
@@ -67,6 +67,17 @@ function __pg_start
         else
             printf '.'
         end
+    end
+end
+
+function __pg_status
+    set -l name $argv[1]
+    if docker ps | grep $name >/dev/null
+        __pg_ping
+        and echo 'ready'
+        or echo 'not ready'
+    else
+        echo 'not running'
     end
 end
 
