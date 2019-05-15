@@ -21,7 +21,8 @@ function _lure_current_directory
 end
 
 function _lure_prompt_git
-    if test -n (command git rev-parse --is-inside-work-tree 2>/dev/null)
+    set --local is_git_repository (command git rev-parse --is-inside-work-tree 2>/dev/null)
+    if test -n "$is_git_repository"
         set --local git_branch (command git symbolic-ref --short HEAD 2>/dev/null; or echo (command git show-ref --head -s --abbrev HEAD)[1])
         set --local git_branch_color "$lure_color_git_branch"
         set --local git_dirty_symbol
