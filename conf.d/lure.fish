@@ -33,3 +33,5 @@ _lure_set_default lure_color_command_duration $lure_color_warning
 set --global _lure_fresh_session true
 
 functions -q _lure_prompt_newline
+
+alias g=hub
