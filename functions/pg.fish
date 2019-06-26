@@ -13,7 +13,7 @@ function __pg_stop
 end
 
 function __pg_help
-    set -l commands start stop destroy psql "createdb [dbname]" status logs help
+    set -l commands start stop destroy psql "createdb dbname" status logs help
 
     echo "pg <command>"
     echo
@@ -108,7 +108,10 @@ function pg
             __pg_status $name $image
         case logs
             __pg_logs $name $image
+        case help
+            __pg_help
         case '*'
+            echo "Undefined command: $cmd"
             __pg_help
     end
 end
