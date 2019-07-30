@@ -15,7 +15,7 @@ _lure_set_default lure_color_light (set_color white)
 _lure_set_default lure_color_warning (set_color yellow)
 _lure_set_default lure_color_dark (set_color black)
 
-_lure_set_default lure_symbol_prompt "❯"
+_lure_set_default lure_symbol_prompt ">"
 _lure_set_default lure_color_prompt_on_error $lure_color_danger
 _lure_set_default lure_color_prompt_on_success $lure_color_success
 _lure_set_default lure_color_current_directory $lure_color_primary
