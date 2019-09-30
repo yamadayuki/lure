@@ -4,7 +4,7 @@ function _lure_prompt_symbol \
     set --local color_symbol $lure_color_prompt_on_success
     set --local command_succeed 0
     if test $exit_code -ne $command_succeed
-        set color_symbol "$lure_color_prompt_on_error$lure_symbol_prompt$lure_color_prompt_on_success"
+        set color_symbol $lure_color_prompt_on_error
     end
 
     echo "$color_symbol$lure_symbol_prompt"

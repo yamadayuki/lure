@@ -8,7 +8,7 @@ end
 _lure_set_default lure_color_primary (set_color blue)
 _lure_set_default lure_color_info (set_color cyan)
 _lure_set_default lure_color_mute (set_color brblack)
-_lure_set_default lure_color_success (set_color magenta)
+_lure_set_default lure_color_success (set_color green)
 _lure_set_default lure_color_normal (set_color normal)
 _lure_set_default lure_color_danger (set_color red)
 _lure_set_default lure_color_light (set_color white)
