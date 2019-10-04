@@ -1,8 +1,8 @@
-bind \ct '__fzf_go_src'
-bind \cg '__fzf_code'
-bind \cw '__fzf_browse_github'
+bind \ct '__sk_go_src'
+bind \cg '__sk_code'
+bind \cw '__sk_browse_github'
 if bind -M insert >/dev/null ^/dev/null
-    bind -M insert \ct '__fzf_go_src'
-    bind -M insert \cg '__fzf_code'
-    bind -M insert \cw '__fzf_browse_github'
+    bind -M insert \ct '__sk_go_src'
+    bind -M insert \cg '__sk_code'
+    bind -M insert \cw '__sk_browse_github'
 end
