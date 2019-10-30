@@ -17,6 +17,7 @@ function __redis_create \
 
     echo "==> Creating server"
     docker run \
+        -p 6379:6379 \
         --name $name \
         -v ~/docker/redis:/data \
         -d $image
