@@ -29,7 +29,7 @@ _lure_set_default lure_color_git_branch $lure_color_mute
 _lure_set_default lure_color_git_dirty $lure_color_mute
 
 _lure_set_default lure_color_command_duration $lure_color_warning
-_lure_set_default lure_color_current_time $lure_color_info
+_lure_set_default lure_color_current_time $lure_color_success
 
 # skim options
 set -g lure_skim_default_option --tiebreak=index --inline-info
