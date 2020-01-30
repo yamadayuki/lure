@@ -6,6 +6,7 @@ function __sk_go_src
     if [ $line ]
         ghq root | read dir
         cd "$dir/$line"
-        commandline -f repaint
     end
+
+    commandline -f repaint
 end

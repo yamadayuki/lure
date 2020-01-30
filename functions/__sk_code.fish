@@ -6,6 +6,7 @@ function __sk_code
     if [ $line ]
         ghq root | read dir
         code "$dir/$line"
-        commandline -f repaint
     end
+
+    commandline -f repaint
 end
