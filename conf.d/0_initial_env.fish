@@ -1,7 +1,7 @@
 # Setup for anyenv
 set -x PATH $PATH $HOME/.anyenv/bin
 
-if which anyenv >/dev/null ^&1
+if which anyenv >/dev/null >&1
     # Setup *env managed by anyenv
     set -l envs (anyenv envs)
     for e in $envs
