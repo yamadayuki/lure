@@ -1,3 +1,3 @@
 function l
-    ls -la $argv
+    exa -al --git $argv
 end
