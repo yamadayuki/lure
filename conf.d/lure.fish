@@ -31,13 +31,19 @@ _lure_set_default lure_color_git_dirty $lure_color_mute
 _lure_set_default lure_color_command_duration $lure_color_warning
 _lure_set_default lure_color_current_time $lure_color_success
 
-# skim options
-set -g lure_skim_default_option --tiebreak=index --inline-info
-
+# Global variables
+set --global lure_skim_default_option --tiebreak=index --inline-info
 set --global _lure_fresh_session true
 
 functions -q _lure_prompt_newline
 
-alias g=git
+# Key Bindings
+bind \ct '__sk_go_src'
+bind \cg '__sk_code'
+bind \cr '__sk_history'
 
-alias code=code-insiders
+if bind -M insert >/dev/null ^/dev/null
+    bind -M insert \ct '__sk_go_src'
+    bind -M insert \cg '__sk_code'
+    bind -M insert \cr '__sk_history'
+end
