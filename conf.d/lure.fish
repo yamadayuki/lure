@@ -31,6 +31,12 @@ _lure_set_default lure_color_git_dirty $lure_color_mute
 _lure_set_default lure_color_command_duration $lure_color_warning
 _lure_set_default lure_color_current_time $lure_color_success
 
+_lure_set_default lure_symbol_node_version "⬢"
+_lure_set_default lure_color_node_version $lure_color_success
+
+_lure_set_default lure_symbol_rust_version "𝗥"
+_lure_set_default lure_color_rust_version $lure_color_warning
+
 # Command Colors
 set --global fish_color_normal brwhite
 # set --global fish_color_autosuggestion brblack
