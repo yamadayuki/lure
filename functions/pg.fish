@@ -96,7 +96,7 @@ end
 
 function pg
     set -l name the-postgres
-    set -l image postgres:9.6.1-alpine
+    set -l image postgres:alpine
     set -l cmd $argv[1]
 
     switch "$cmd"

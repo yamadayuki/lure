@@ -57,7 +57,7 @@ function redis \
     --argument-names cmd
 
     set -l name the-redis
-    set -l image redis:3.0.7-alpine
+    set -l image redis:alpine
 
     switch "$cmd"
         case start
