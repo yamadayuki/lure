@@ -8,6 +8,13 @@ end
 function __pg_stop
     set -l name $argv[1]
 
+    echo "==> Stopping server"
+    docker stop $name
+end
+
+function __pg_destroy \
+    --argument-names name image
+
     echo "==> Destroying server"
     docker rm $name
 end
@@ -69,7 +76,7 @@ function __pg_start
         sleep 5
         if __pg_ping $name
             echo
-            echo "ready"
+            echo ready
             break
         else
             printf '.'
@@ -81,7 +88,7 @@ function __pg_status
     set -l name $argv[1]
     if docker ps | grep $name >/dev/null
         __pg_ping $name
-        and echo 'ready'
+        and echo ready
         or echo 'not ready'
     else
         echo 'not running'
