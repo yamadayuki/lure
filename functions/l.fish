@@ -1,3 +1,3 @@
 function l
-    exa -al --git $argv
+    exa --long --all --header --octal-permissions --time-style=long-iso --git $argv
 end
