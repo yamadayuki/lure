@@ -34,7 +34,7 @@ _lure_set_default lure_color_current_time $lure_color_success
 _lure_set_default lure_symbol_node_version "⬢"
 _lure_set_default lure_color_node_version $lure_color_success
 
-_lure_set_default lure_symbol_rust_version "𝗥"
+_lure_set_default lure_symbol_rust_version 𝗥
 _lure_set_default lure_color_rust_version $lure_color_warning
 
 # Command Colors
@@ -80,12 +80,6 @@ set --global _lure_fresh_session true
 functions -q _lure_prompt_newline
 
 # Key Bindings
-bind \ct '__sk_go_src'
-bind \cg '__sk_code'
-bind \cr '__sk_history'
-
-if bind -M insert >/dev/null ^/dev/null
-    bind -M insert \ct '__sk_go_src'
-    bind -M insert \cg '__sk_code'
-    bind -M insert \cr '__sk_history'
-end
+bind \ct __sk_go_src
+bind \cg __sk_code
+bind \cr __sk_history
