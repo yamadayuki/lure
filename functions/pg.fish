@@ -1,8 +1,8 @@
 function __pg_createdb
     set -l name $argv[1]
-    set -l image $argv[2]
+    set -l dbname $argv[2]
 
-    docker exec -it $name createdb --username=$USER "$image"
+    docker exec -it $name createdb --username=postgres "$dbname"
 end
 
 function __pg_stop
@@ -39,13 +39,13 @@ end
 function __pg_ping
     set -l name $argv[1]
 
-    docker exec -it $name psql --username=$USER -c 'select 1;' >/dev/null 2>&1
+    docker exec -it $name psql --username=postgres -c 'select 1;' >/dev/null 2>&1
 end
 
 function __pg_psql
     set -l name $argv[1]
 
-    docker exec -it $name psql --username=$USER
+    docker exec -it $name psql --username=postgres
 end
 
 function __pg_server_create
@@ -56,10 +56,10 @@ function __pg_server_create
     docker run \
         -p 5432:5432 \
         --name $name \
-        -e POSTGRES_USER=$USER \
+        -e POSTGRES_USER=postgres \
         -e POSTGRES_PASSWORD=password \
         -e POSTGRES_HOST_AUTH_METHOD=trust \
-        -v ~/docker/postgres:/var/lib/postgresql/data \
+        -v the-postgres:/var/lib/postgresql/data \
         -d $image
 end
 
@@ -117,7 +117,7 @@ function pg
         case psql
             __pg_psql $name $image
         case createdb
-            __pg_createdb $name $image
+            __pg_createdb $name $argv[2]
         case status
             __pg_status $name $image
         case logs
