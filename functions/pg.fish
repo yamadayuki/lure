@@ -44,8 +44,10 @@ end
 
 function __pg_psql
     set -l name $argv[1]
+    set -l image $argv[2]
+    set -l args $argv[3..-1]
 
-    docker exec -it $name psql --username=postgres
+    docker exec -it $name psql --username=postgres $args
 end
 
 function __pg_server_create
@@ -115,7 +117,7 @@ function pg
         case destroy
             __pg_destroy $name $image
         case psql
-            __pg_psql $name $image
+            __pg_psql $name $image $argv[2..-1]
         case createdb
             __pg_createdb $name $argv[2]
         case status
