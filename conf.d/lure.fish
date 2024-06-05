@@ -72,12 +72,9 @@ set --global fish_pager_color_description bryellow
 # set --global fish_pager_color_selected_description  bryellow
 # set --global fish_pager_color_selected_prefix brblack
 
-
 # Global variables
 set --global lure_skim_default_option --tiebreak=index --inline-info
 set --global _lure_fresh_session true
-
-functions -q _lure_prompt_newline
 
 # Key Bindings
 bind \ct __sk_go_src
